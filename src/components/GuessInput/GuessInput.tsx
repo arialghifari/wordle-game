@@ -1,15 +1,19 @@
 import React from 'react';
 
-function GuessInput({ handleSubmitGuess }) {
+function GuessInput({
+  handleSubmitGuess,
+}: {
+  handleSubmitGuess: (tentativeGuess: string) => void;
+}) {
   const [tentativeGuess, setTentativeGuess] = React.useState('');
 
-  function handleSubmit(event) {
+  function handleSubmit(event: React.FormEvent) {
     event.preventDefault();
     handleSubmitGuess(tentativeGuess);
     setTentativeGuess('');
   }
 
-  function handleOnChange(event) {
+  function handleOnChange(event: React.ChangeEvent<HTMLInputElement>) {
     if (event.target.value.length > 5) return;
     setTentativeGuess(event.target.value.toUpperCase());
   }

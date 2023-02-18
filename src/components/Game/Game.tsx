@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { sample } from '../../utils';
 import { WORDS } from '../../data';
 import GuessInput from '../GuessInput';
@@ -11,9 +10,9 @@ const answer = sample(WORDS);
 console.info({ answer });
 
 function Game() {
-  const [guesses, setGuesses] = React.useState([]);
+  const [guesses, setGuesses] = React.useState<string[]>([]);
 
-  function handleSubmitGuess(tentativeGuess) {
+  function handleSubmitGuess(tentativeGuess: string) {
     setGuesses((prevGuess) => [...prevGuess, tentativeGuess]);
   }
 

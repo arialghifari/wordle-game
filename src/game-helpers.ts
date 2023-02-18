@@ -1,4 +1,4 @@
-export function checkGuess(guess, answer) {
+export function checkGuess(guess: string, answer: string) {
   if (!guess) {
     return null;
   }

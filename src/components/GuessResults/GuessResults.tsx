@@ -1,6 +1,4 @@
-import React from 'react';
-
-function GuessResults({ guesses }) {
+function GuessResults({ guesses }: { guesses: string[] }) {
   return (
     <div className='guess-results'>
       {guesses.map((guess, index) => (
