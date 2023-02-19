@@ -1,11 +1,25 @@
-function Guess({ value }: { value?: string | undefined }) {
-  const valueArray = value ? value.split('') : ['', '', '', '', ''];
+import { checkGuess } from '../../game-helpers';
+
+function Guess({
+  value,
+  answer,
+}: {
+  value: string | undefined;
+  answer: string;
+}) {
+  const result = checkGuess(value, answer) ?? [
+    { letter: '', status: '' },
+    { letter: '', status: '' },
+    { letter: '', status: '' },
+    { letter: '', status: '' },
+    { letter: '', status: '' },
+  ];
 
   return (
     <p className='guess'>
-      {valueArray.map((letter, index) => (
-        <span key={index} className='cell'>
-          {letter}
+      {result.map((guess, index) => (
+        <span key={index} className={`cell ${guess.status}`}>
+          {guess.letter}
         </span>
       ))}
     </p>

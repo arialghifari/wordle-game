@@ -1,4 +1,4 @@
-export function checkGuess(guess: string, answer: string) {
+export function checkGuess(guess: string | undefined, answer: string) {
   if (!guess) {
     return null;
   }
