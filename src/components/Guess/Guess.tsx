@@ -27,4 +27,3 @@ function Guess({
 }
 
 export default Guess;
-
