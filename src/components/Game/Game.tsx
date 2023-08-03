@@ -14,6 +14,8 @@ function Game() {
   const [guesses, setGuesses] = React.useState<string[]>([])
 
   function handleSubmitGuess(tentativeGuess: string) {
+    if (guesses.length >= 6) return
+
     setGuesses([...guesses, tentativeGuess])
   }
 
