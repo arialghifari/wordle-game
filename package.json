@@ -4,14 +4,12 @@
   "private": true,
   "author": "Josh Comeau <me@joshwcomeau.com>",
   "dependencies": {
+    "@types/react": "^18.2.18",
+    "@types/react-dom": "^18.2.7",
     "new-component": "4.0.0",
     "prettier": "^2.6.2",
     "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "react-scripts": "5.0.1",
-    "@types/react": "^18.2.18",
-    "@types/react-dom": "^18.2.7",
-    "typescript": "^5.1.6"
+    "react-dom": "18.2.0"
   },
   "scripts": {
     "start": "react-scripts start",
