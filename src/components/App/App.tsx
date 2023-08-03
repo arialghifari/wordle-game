@@ -1,5 +1,5 @@
-import Game from '../Game';
-import Header from '../Header';
+import Game from '../Game'
+import Header from '../Header'
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
         <Game />
       </div>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
