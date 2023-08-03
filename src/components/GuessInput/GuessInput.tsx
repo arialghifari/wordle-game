@@ -3,13 +3,12 @@ import React from 'react'
 function GuessInput() {
   const [guess, setGuess] = React.useState('')
 
-  function handleOnSubmit(e) {
+  function handleOnSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
 
     if (guess.length !== 5) return
 
     console.log({ guess })
-    setGuess('')
   }
 
   return (
