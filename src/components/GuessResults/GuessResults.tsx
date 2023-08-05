@@ -4,13 +4,14 @@ import Guess from '../Guess/Guess'
 
 type GuessInputProps = {
   guesses: string[]
+  answer: string
 }
 
-function GuessResults({ guesses }: GuessInputProps) {
+function GuessResults({ guesses, answer }: GuessInputProps) {
   return (
     <div className="guess-results">
       {range(NUM_OF_GUESSES_ALLOWED).map((num) => (
-        <Guess key={num} value={guesses[num]} />
+        <Guess key={num} guess={guesses[num]} answer={answer} />
       ))}
     </div>
   )

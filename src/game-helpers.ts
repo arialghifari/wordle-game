@@ -15,7 +15,10 @@ export function checkGuess(guess: string, answer: string) {
   const guessChars = guess.toUpperCase().split('')
   const answerChars = answer.split('')
 
-  const result: object[] = []
+  const result: {
+    letter: string
+    status: 'correct' | 'incorrect' | 'misplaced'
+  }[] = []
 
   // Step 1: Look for correct letters.
   for (let i = 0; i < guessChars.length; i++) {
@@ -31,12 +34,14 @@ export function checkGuess(guess: string, answer: string) {
 
   // Step 2: look for misplaced letters. If it's not misplaced,
   // it must be incorrect.
+  let status: 'correct' | 'incorrect' | 'misplaced'
+
   for (let i = 0; i < guessChars.length; i++) {
     if (guessChars[i] === SOLVED_CHAR) {
       continue
     }
 
-    let status = 'incorrect'
+    status = 'incorrect'
     const misplacedIndex = answerChars.findIndex(
       (char) => char === guessChars[i]
     )
@@ -47,7 +52,7 @@ export function checkGuess(guess: string, answer: string) {
 
     result[i] = {
       letter: guessChars[i],
-      status,
+     status,
     }
   }
 
