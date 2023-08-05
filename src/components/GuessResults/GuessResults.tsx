@@ -6,7 +6,7 @@ type GuessInputProps = {
   guesses: string[]
 }
 
-function GuessResluts({ guesses }: GuessInputProps) {
+function GuessResults({ guesses }: GuessInputProps) {
   return (
     <div className="guess-results">
       {range(NUM_OF_GUESSES_ALLOWED).map((num) => (
@@ -16,4 +16,4 @@ function GuessResluts({ guesses }: GuessInputProps) {
   )
 }
 
-export default GuessResluts
+export default GuessResults

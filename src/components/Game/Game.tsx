@@ -3,7 +3,7 @@ import React from 'react'
 import { sample } from '../../utils'
 import { WORDS } from '../../data'
 import GuessInput from '../GuessInput/GuessInput'
-import GuessResluts from '../GuessResluts'
+import GuessResults from '../GuessResults'
 
 // Pick a random word on every pageload.
 const answer = sample(WORDS)
@@ -21,7 +21,7 @@ function Game() {
 
   return (
     <React.Fragment>
-      <GuessResluts guesses={guesses} />
+      <GuessResults guesses={guesses} />
       <GuessInput handleSubmitGuess={handleSubmitGuess} />
     </React.Fragment>
   )
