@@ -4,8 +4,9 @@ import { sample } from '../../utils'
 import { WORDS } from '../../data'
 import GuessInput from '../GuessInput/GuessInput'
 import GuessResults from '../GuessResults'
-import Banner from '../Banner'
 import { NUM_OF_GUESSES_ALLOWED } from '../../constants'
+import WonBanner from '../WonBanner'
+import LostBanner from '../LostBanner'
 
 // Pick a random word on every pageload.
 const answer = sample(WORDS)
@@ -35,11 +36,9 @@ function Game() {
     <React.Fragment>
       <GuessResults guesses={guesses} answer={answer} />
       <GuessInput handleSubmitGuess={handleSubmitGuess} status={status} />
-      <Banner
-        status={status}
-        answer={answer}
-        guessesAttempts={guesses.length}
-      />
+
+      {status === 'won' && <WonBanner guessesAttempts={guesses.length} />}
+      {status === 'lost' && <LostBanner answer={answer} />}
     </React.Fragment>
   )
 }
