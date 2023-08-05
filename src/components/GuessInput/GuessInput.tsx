@@ -2,9 +2,10 @@ import React from 'react'
 
 type GuessInputProps = {
   handleSubmitGuess: (tentativeGuess: string) => void
+  status: 'running' | 'won' | 'lost'
 }
 
-function GuessInput({ handleSubmitGuess }: GuessInputProps) {
+function GuessInput({ handleSubmitGuess, status }: GuessInputProps) {
   const [tentativeGuess, setTentativeGuess] = React.useState('')
 
   function handleOnSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -30,6 +31,7 @@ function GuessInput({ handleSubmitGuess }: GuessInputProps) {
         pattern="[a-zA-Z]{5}"
         title="must be exact 5 letters words"
         autoComplete="off"
+        disabled={status !== 'running'}
       />
     </form>
   )
