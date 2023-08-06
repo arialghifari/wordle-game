@@ -24,6 +24,7 @@ function GuessInput({ handleSubmitGuess, status }: GuessInputProps) {
         id="guess-input"
         type="text"
         required
+        autoFocus
         value={tentativeGuess}
         onChange={(e) => setTentativeGuess(e.target.value.toUpperCase())}
         maxLength={5}
