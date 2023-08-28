@@ -1,6 +1,11 @@
 import Banner from '../Banner'
 
-function WonBanner({ guessesAttempts }: { guessesAttempts: number }) {
+type WonBannerProps = {
+  guessesAttempts: number
+  handleRestartGame: () => void
+}
+
+function WonBanner({ guessesAttempts, handleRestartGame }: WonBannerProps) {
   return (
     <Banner type="happy">
       <p>
@@ -11,6 +16,7 @@ function WonBanner({ guessesAttempts }: { guessesAttempts: number }) {
         </strong>
         .
       </p>
+      <button className='btn-restart' onClick={handleRestartGame}>Restart</button>
     </Banner>
   )
 }

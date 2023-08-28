@@ -1,11 +1,19 @@
 import Banner from '../Banner'
 
-function LostBanner({ answer }: { answer: string }) {
+type LostBannerBannerProps = {
+  answer: string
+  handleRestartGame: () => void
+}
+
+function LostBanner({ answer, handleRestartGame }: LostBannerBannerProps) {
   return (
     <Banner type="sad">
       <p>
         Sorry, the correct answer is <strong>{answer}</strong>.
       </p>
+      <button className="btn-restart" onClick={handleRestartGame}>
+        Restart
+      </button>
     </Banner>
   )
 }

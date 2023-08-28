@@ -219,6 +219,14 @@ h1 {
   margin-bottom: 0.5em;
 }
 
+.btn-restart {
+  margin-top: 0.6em;
+  border-radius: 4px;
+  background-color: #dbdbdb;
+  padding: 0 0.5rem;
+  color: #252525;
+}
+
 /*
   Keyframe animations
 */
